@@ -29,14 +29,7 @@ public class KeystrokeMovement : MonoBehaviour {
 		else if (d)
 			transform.position += Vector3.right * speed;// increase horizontal motion
 
-		/** MOUSE **/
-		bool left = Input.GetMouseButtonDown (0);
-		bool right = Input.GetMouseButtonDown (1);
 
-		if (left) //release projectile from weapon
-			;
-		if (right) //interact with object
-			;
 
 			
 	}
