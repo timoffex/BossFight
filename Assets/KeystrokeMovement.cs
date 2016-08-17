@@ -18,14 +18,16 @@ public class KeystrokeMovement : MonoBehaviour {
 		bool d = Input.GetKey ("d");
 
 
+		float speed = 0.2F;
+
 		if (w)
-			transform.position += Vector3.up * 0.45F;// increase vertical motion
+			transform.position += Vector3.up * speed;// increase vertical motion
 		else if (s)
-			transform.position -= Vector3.up * 0.45F;// decrease vertical motion 
+			transform.position -= Vector3.up * speed;// decrease vertical motion 
 		if (a)
-			transform.position -= Vector3.right * 0.45F;// decrease horizontal motion
+			transform.position -= Vector3.right * speed;// decrease horizontal motion
 		else if (d)
-			transform.position += Vector3.right * 0.45F;// increase horizontal motion
+			transform.position += Vector3.right * speed;// increase horizontal motion
 
 		/** MOUSE **/
 		bool left = Input.GetMouseButtonDown (0);
