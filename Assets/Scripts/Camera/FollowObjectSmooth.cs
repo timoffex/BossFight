@@ -41,6 +41,14 @@ public class FollowObjectSmooth : MonoBehaviour {
 
 
 
+		// How this works:
+		//		"percentage" is the percentage of the distance from our object that we should move.
+		//		percentage == 0 means "don't move" and percentage == 1 means "put camera over object"
+
+		//		The percentage is calculated in a nice way such that if error >= 0.4 we will move the camera
+		//		such that the error becomes 0.3. When the error is less than 0.4, we try to still move the camera,
+		//		but slowly.
+
 		const float preferred = 0.3f;
 		const float cutoff = preferred + 0.1f;
 		const float minimum = 0.1f;
