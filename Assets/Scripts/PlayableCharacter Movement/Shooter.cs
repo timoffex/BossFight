@@ -19,7 +19,7 @@ public class Shooter : MonoBehaviour {
 			GameObject bullet = GameObject.Instantiate (bulletPrefab, transform.position, Quaternion.identity) as GameObject;
 			Rigidbody2D physics = bullet.GetComponent<Rigidbody2D> ();
 			mousePosition = MouseMovement2D.getMousePosition ();
-			physics.velocity = (mousePosition - transform.position).normalized * shooterSpeed;
+			physics.velocity = ((Vector2)(mousePosition - transform.position)).normalized * shooterSpeed;
 		}
 	}
 }
