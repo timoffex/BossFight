@@ -6,9 +6,12 @@ public class KeystrokeMovement : MonoBehaviour {
 
 	public float characterSpeed = 0.2f;
 
+
+	private Animator animator;
+
 	// Use this for initialization
 	void Start () {
-
+		animator = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -21,17 +24,26 @@ public class KeystrokeMovement : MonoBehaviour {
 		bool d = Input.GetKey ("d");
 
 
+		Vector3 vel = new Vector3 (0, 0);
+
 		if (w)
-			transform.position += Vector3.up * characterSpeed;// increase vertical motion
+			vel += Vector3.up * characterSpeed;// increase vertical motion
 		else if (s)
-			transform.position -= Vector3.up * characterSpeed;// decrease vertical motion 
+			vel -= Vector3.up * characterSpeed;// decrease vertical motion 
 		if (a)
-			transform.position -= Vector3.right * characterSpeed;// decrease horizontal motion
+			vel -= Vector3.right * characterSpeed;// decrease horizontal motion
 		else if (d)
-			transform.position += Vector3.right * characterSpeed;// increase horizontal motion
+			vel += Vector3.right * characterSpeed;// increase horizontal motion
 
 
+		if (vel.magnitude > 0)
+			animator.SetBool ("Moving", true);
+		else
+			animator.SetBool ("Moving", false);
 
+
+		transform.rotation = Quaternion.LookRotation (Vector3.forward, vel);
+		transform.position += vel;
 			
 	}
 }
