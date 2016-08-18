@@ -11,6 +11,8 @@ public class SpiderScript : MonoBehaviour {
 	public float restDuration = 1;
 	public float chaseDuration = 3;
 
+	private float nextRestDuration;
+	private float nextChaseDuration;
 	private float lastRecordedTime = 0;
 
 
@@ -21,6 +23,9 @@ public class SpiderScript : MonoBehaviour {
 
 	void Start () {
 		controller = GetComponent<Animator> ();
+
+		nextRestDuration = restDuration;
+		nextChaseDuration = chaseDuration;
 	}
 
 	// Update is called once per frame
@@ -37,14 +42,15 @@ public class SpiderScript : MonoBehaviour {
 		if (aiState == AIState.Rest) {
 			controller.SetBool ("Moving", false);
 
-			if (Time.time - lastRecordedTime > restDuration) {
+			if (Time.time - lastRecordedTime > nextRestDuration) {
 				lastRecordedTime = Time.time;
 				aiState = AIState.Chase;
+				nextChaseDuration = chaseDuration + (Random.value-0.5f)*2;
 
 
 				var noise = Random.insideUnitSphere;
 				noise.z = 0;
-				targetPosition = player.position + 10*noise;
+				targetPosition = player.position + 4*noise;
 			}
 		} else {
 			controller.SetBool ("Moving", true);
@@ -56,16 +62,17 @@ public class SpiderScript : MonoBehaviour {
 
 			FaceDirection (toTarget);
 
-			var speed = 0.05f;
+			var speed = 0.1f;
 
 			if (dist > speed) {
 				transform.position += toTarget * speed;
 			}
 
 
-			if (dist < speed || Time.time - lastRecordedTime > chaseDuration) {
+			if (dist < speed || Time.time - lastRecordedTime > nextChaseDuration) {
 				lastRecordedTime = Time.time;
 				aiState = AIState.Rest;
+				nextRestDuration = restDuration + (Random.value-0.5f);
 			}
 		}
 	}
