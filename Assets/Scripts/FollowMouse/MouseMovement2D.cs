@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MouseMovement2D : MonoBehaviour {
 
-	private Vector3 mousePosition;
+	private static Vector3 mousePosition;
 	public float speed = 0.1f;
 	// Use this for initialization
 	void Start () {
@@ -22,5 +22,15 @@ public class MouseMovement2D : MonoBehaviour {
 
 		/*if (right) //interact with object
 			;*/
+	}
+
+	/** getMousePosition
+	 * 		used in Shooter.cs
+	 *      reusable piece of code
+	 * 		returns Vector3 of player's cursor position
+	 * */
+	public static Vector3 getMousePosition () {
+		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		return mousePosition;
 	}
 }

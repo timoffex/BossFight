@@ -3,6 +3,9 @@ using System.Collections;
 
 public class KeystrokeMovement : MonoBehaviour {
 
+
+	public float characterSpeed = 0.2f;
+
 	// Use this for initialization
 	void Start () {
 
@@ -18,16 +21,14 @@ public class KeystrokeMovement : MonoBehaviour {
 		bool d = Input.GetKey ("d");
 
 
-		float speed = 0.2F;
-
 		if (w)
-			transform.position += Vector3.up * speed;// increase vertical motion
+			transform.position += Vector3.up * characterSpeed;// increase vertical motion
 		else if (s)
-			transform.position -= Vector3.up * speed;// decrease vertical motion 
+			transform.position -= Vector3.up * characterSpeed;// decrease vertical motion 
 		if (a)
-			transform.position -= Vector3.right * speed;// decrease horizontal motion
+			transform.position -= Vector3.right * characterSpeed;// decrease horizontal motion
 		else if (d)
-			transform.position += Vector3.right * speed;// increase horizontal motion
+			transform.position += Vector3.right * characterSpeed;// increase horizontal motion
 
 
 
