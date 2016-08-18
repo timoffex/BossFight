@@ -16,10 +16,17 @@ public class Shooter : MonoBehaviour {
 		bool left = Input.GetMouseButtonDown (0);
 
 		if (left){
-			GameObject bullet = GameObject.Instantiate (bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+
+			var direction = ((Vector2)(MouseMovement2D.getMousePosition () - transform.position)).normalized;
+
+
+			GameObject bullet = GameObject.Instantiate (bulletPrefab, transform.position,
+				Quaternion.LookRotation (Vector3.forward, direction)) as GameObject;
+			
+
 			Rigidbody2D physics = bullet.GetComponent<Rigidbody2D> ();
-			mousePosition = MouseMovement2D.getMousePosition ();
-			physics.velocity = ((Vector2)(mousePosition - transform.position)).normalized * shooterSpeed;
+
+			physics.velocity = direction * shooterSpeed;
 		}
 	}
 }

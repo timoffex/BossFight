@@ -70,7 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f81cffd42d9e4a46af7ebce4150dd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chasingPlayer: 0
+  restDuration: 1
+  chaseDuration: 3
 --- !u!212 &212000013136685724
 SpriteRenderer:
   m_ObjectHideFlags: 1
