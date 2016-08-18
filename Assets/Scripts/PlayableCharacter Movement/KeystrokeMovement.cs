@@ -27,16 +27,18 @@ public class KeystrokeMovement : MonoBehaviour {
 		Vector3 vel = new Vector3 (0, 0);
 
 		if (w)
-			vel += Vector3.up * characterSpeed;// increase vertical motion
+			vel += Vector3.up;// increase vertical motion
 		else if (s)
-			vel -= Vector3.up * characterSpeed;// decrease vertical motion 
+			vel -= Vector3.up;// decrease vertical motion 
 		if (a)
-			vel -= Vector3.right * characterSpeed;// decrease horizontal motion
+			vel -= Vector3.right;// decrease horizontal motion
 		else if (d)
-			vel += Vector3.right * characterSpeed;// increase horizontal motion
+			vel += Vector3.right;// increase horizontal motion
 
 
 		if (vel.magnitude > 0) {
+			vel = vel.normalized * characterSpeed;
+
 			animator.SetBool ("Moving", true);
 			transform.rotation = Quaternion.LookRotation (Vector3.forward, vel);
 			transform.position += vel;
