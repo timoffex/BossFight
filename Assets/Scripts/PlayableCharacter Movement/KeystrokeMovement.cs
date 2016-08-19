@@ -36,11 +36,15 @@ public class KeystrokeMovement : MonoBehaviour {
 			vel += Vector3.right;// increase horizontal motion
 
 
+
 		if (vel.magnitude > 0) {
+			int movementIndex = (int)((vel.x + 1) - (vel.y - 1) * 3);
+			animator.SetInteger ("MovementIndex", movementIndex);
+
+
 			vel = vel.normalized * characterSpeed;
 
 			animator.SetBool ("Moving", true);
-			transform.rotation = Quaternion.LookRotation (Vector3.forward, vel);
 			transform.position += vel;
 		} else {
 			animator.SetBool ("Moving", false);
