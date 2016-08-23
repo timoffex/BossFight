@@ -6,7 +6,7 @@ public class ProjectileTypes : MonoBehaviour {
 
 	public bool damagePlayer = true;
 
-	void OnCollisionEnter2D (Collision2D col){
+	void OnTriggerEnter2D (Collider2D col){
 		print (col.gameObject.name);
 
 		// Only deal damage if whether we want to hit a player agrees with whether we would hit a player.
