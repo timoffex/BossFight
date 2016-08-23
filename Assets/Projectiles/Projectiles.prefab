@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  damagePlayer: 0
 --- !u!212 &212000013417329286
 SpriteRenderer:
   m_ObjectHideFlags: 1

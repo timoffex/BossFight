@@ -4,14 +4,22 @@ using System.Collections;
 public class ProjectileTypes : MonoBehaviour {
 	public float damage = 0.0f;
 
+	public bool damagePlayer = true;
+
 	void OnCollisionEnter2D (Collision2D col){
 		print (col.gameObject.name);
-		var combat = col.gameObject.GetComponent<Combat>();
-		if (combat == null) {
-			print ("Combat.cs is null");
-		} else {
-			combat.TakeDamage (damage);
-			Destroy (gameObject);
+
+		// Only deal damage if whether we want to hit a player agrees with whether we would hit a player.
+		if (col.gameObject.tag.Equals ("Player") == damagePlayer) {
+			var combat = col.gameObject.GetComponent<Combat> ();
+
+			if (combat == null) {
+				print ("Combat script not attached.");
+			} else {
+				combat.TakeDamage (damage);
+				Destroy (gameObject);
+			}
 		}
+
 	}
 }

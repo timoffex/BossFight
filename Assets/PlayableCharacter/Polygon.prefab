@@ -22,6 +22,8 @@ GameObject:
   - 114: {fileID: 114000012045509760}
   - 114: {fileID: 114000013054889744}
   - 95: {fileID: 95000011921980364}
+  - 61: {fileID: 61000014011497716}
+  - 114: {fileID: 114000012064982208}
   m_Layer: 0
   m_Name: Polygon
   m_TagString: Player
@@ -102,6 +104,20 @@ Transform:
   - {fileID: 4000011267125212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &61000014011497716
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010587429476}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.057438016, y: 0.21252024}
+  serializedVersion: 2
+  m_Size: {x: 0.8851243, y: 1.2642143}
 --- !u!95 &95000011921980364
 Animator:
   serializedVersion: 3
@@ -131,6 +147,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpeed: 0.2
+--- !u!114 &114000012064982208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010587429476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210fc8145a3b647d59c6a9256ede89f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!114 &114000013054889744
 MonoBehaviour:
   m_ObjectHideFlags: 1
