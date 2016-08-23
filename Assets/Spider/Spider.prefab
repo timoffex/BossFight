@@ -22,6 +22,8 @@ GameObject:
   - 212: {fileID: 212000013136685724}
   - 95: {fileID: 95000014047451204}
   - 114: {fileID: 114000013326042010}
+  - 60: {fileID: 60000012295624664}
+  - 114: {fileID: 114000011649743518}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -36,12 +38,43 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013287278694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.72, y: 2.79, z: 0}
+  m_LocalPosition: {x: 6.79, y: 2.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!60 &60000012295624664
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013287278694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.90000004, y: 1.75}
+      - {x: 0.73594, y: 1.3057692}
+      - {x: 0.49685335, y: 0.95898247}
+      - {x: 0.0029249191, y: 1.2675474}
+      - {x: -0.4114933, y: 0.97605824}
+      - {x: -0.7058768, y: 1.1589217}
+      - {x: -0.90000004, y: 1.75}
+      - {x: -0.9114866, y: -0.53452873}
+      - {x: -0.90000004, y: -1.75}
+      - {x: -0.76081705, y: -1.75}
+      - {x: -0.59348154, y: -0.94820905}
+      - {x: -0.29519367, y: -0.5648396}
+      - {x: -0.014870167, y: -0.5432346}
+      - {x: 0.28451157, y: -0.55938816}
+      - {x: 0.5760884, y: -0.9491291}
+      - {x: 0.76081705, y: -1.75}
+      - {x: 0.90000004, y: -1.75}
 --- !u!95 &95000014047451204
 Animator:
   serializedVersion: 3
@@ -59,6 +92,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011649743518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013287278694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210fc8145a3b647d59c6a9256ede89f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!114 &114000013326042010
 MonoBehaviour:
   m_ObjectHideFlags: 1
