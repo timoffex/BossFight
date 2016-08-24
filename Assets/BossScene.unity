@@ -357,6 +357,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61954d2e114c54df3901598067be8b4c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &966290093
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011592962664, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 43351a8624c8d464d9b3fa7bab822d70, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1095324614 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013084087324, guid: acb72205ec9d84f77a29f2cd2ab60c9e,

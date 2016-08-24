@@ -24,6 +24,7 @@ GameObject:
   - 95: {fileID: 95000011921980364}
   - 61: {fileID: 61000014011497716}
   - 114: {fileID: 114000012064982208}
+  - 50: {fileID: 50000013928295826}
   m_Layer: 0
   m_Name: Polygon
   m_TagString: Player
@@ -104,6 +105,23 @@ Transform:
   - {fileID: 4000011267125212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &50000013928295826
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010587429476}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &61000014011497716
 BoxCollider2D:
   m_ObjectHideFlags: 1

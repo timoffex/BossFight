@@ -8,10 +8,12 @@ public class KeystrokeMovement : MonoBehaviour {
 
 
 	private Animator animator;
+	private Rigidbody2D rbd;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
+		rbd = GetComponent<Rigidbody2D> ();
 	}
 
 	// Update is called once per frame
@@ -24,16 +26,16 @@ public class KeystrokeMovement : MonoBehaviour {
 		bool d = Input.GetKey ("d");
 
 
-		Vector3 vel = new Vector3 (0, 0);
+		Vector2 vel = new Vector2 (0, 0);
 
 		if (w)
-			vel += Vector3.up;// increase vertical motion
+			vel += Vector2.up;// increase vertical motion
 		else if (s)
-			vel -= Vector3.up;// decrease vertical motion 
+			vel -= Vector2.up;// decrease vertical motion 
 		if (a)
-			vel -= Vector3.right;// decrease horizontal motion
+			vel -= Vector2.right;// decrease horizontal motion
 		else if (d)
-			vel += Vector3.right;// increase horizontal motion
+			vel += Vector2.right;// increase horizontal motion
 
 
 
@@ -45,7 +47,7 @@ public class KeystrokeMovement : MonoBehaviour {
 			vel = vel.normalized * characterSpeed;
 
 			animator.SetBool ("Moving", true);
-			transform.position += vel;
+			rbd.MovePosition(rbd.position + vel);
 		} else {
 			animator.SetBool ("Moving", false);
 		}
